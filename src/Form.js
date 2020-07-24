@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'reactstrap'
 
 export default function Form (props) {
@@ -18,8 +19,8 @@ export default function Form (props) {
     }
 
     const onCheckboxChange = evt => {
-        const { name, value } = evt.target
-        checkboxChange(name, value)
+        const { name, checked } = evt.target
+        checkboxChange(name, checked)
     }
 
     const onInputChange = evt => {
@@ -45,7 +46,7 @@ export default function Form (props) {
                     <br></br>
 
                 <h4>Whatchu want?</h4>
-                <h5>*All Fields Required*</h5>
+                <p>*All Fields Required*</p>
 
                     <br></br>
 
@@ -122,7 +123,7 @@ export default function Form (props) {
             </div>
             <div className='form-group checkboxes'>
                 <h4>What toppings you want?</h4>
-                <label>Pepperoni
+                <label>Pepperoni 
                     <input 
                         type="checkbox"
                         name='pepperoni'
@@ -131,7 +132,7 @@ export default function Form (props) {
                     />
                 </label>
 
-                <label>Spicy Italian Sausage
+                <label>Spicy Italian Sausage 
                     <input 
                         type="checkbox"
                         name='sausage'
@@ -140,7 +141,7 @@ export default function Form (props) {
                     />
                 </label>
             
-                <label>Caramelized Mushrooms
+                <label>Caramelized Mushrooms 
                     <input 
                         type="checkbox"
                         name='mushrooms'
@@ -149,7 +150,7 @@ export default function Form (props) {
                     />
                 </label>
 
-                <label>Black Olives
+                <label>Black Olives 
                     <input 
                         type="checkbox"
                         name='olives'
@@ -158,7 +159,7 @@ export default function Form (props) {
                     />
                 </label>
 
-                <label>Roasted Red Peppers
+                <label>Roasted Red Peppers 
                     <input 
                         type="checkbox"
                         name='peppers'
@@ -184,7 +185,7 @@ export default function Form (props) {
                         onChange={onInputChange}
                         name='instructions'
                         type='text'
-                        placeholder='Anything else we should know?'
+                        placeholder='Anything else?'
                     />
                 </label>
             </div>
@@ -192,7 +193,7 @@ export default function Form (props) {
             <div className='form-group submit'>
                 <h2>You ready?</h2>
                 <Link to ='/Confirmation'>
-                <Button disabled={disabled}>Let&nbsp;s make some PIZZA!</Button>
+                <Button className='subbtn'>Let&nbsp;s make some PIZZA!</Button>
                 </Link>
                 <div className='errors'>
                     <div>{errors.name}</div>
